@@ -1,9 +1,9 @@
 #javohir2405
 <div id="header" align="center">
-  <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnB6emE2OG9kdGpycDZmdnhzMDZpb3Y4ZmQ2b2ZtbDQ4MmkyczRrdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VbnUQpnihPSIgIXuZv/giphy.gif" width="200" />
+  <img src="https://media.giphy.com/media/gjrYDwbjnK8x36xZIO/giphy.gif?cid=ecf05e4701hw2lmspoogsq6xudcq7g4cdb9ltqyhcnmmyglp&ep=v1_gifs_related&rid=giphy.gif&ct=s" width="400" />
 </div>
 <div id="header" align="center">
-  <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/71746304/347023605-553f3240-7273-486d-a8b7-12683af20036.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240710%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240710T133319Z&X-Amz-Expires=300&X-Amz-Signature=a6f95db870bd9c628af2a181664d0376cb9d4d07cd5f04f428e70bdb84beebe7&X-Amz-SignedHeaders=host&actor_id=175081629&key_id=0&repo_id=826373595" width="1000" />
+  <img src="https://media.giphy.com/media/AKjT5kDZMK4wsPXJPk/giphy.gif?cid=ecf05e47c78d5tmqykbnx60wal93p6eiopplofio0dezc1f1&ep=v1_gifs_related&rid=giphy.gif&ct=s" width="400" />
 </div>
 <hr>
 <div id="badges" align="center">
@@ -15,9 +15,6 @@
   </a>
   <a href="https://instagram.com/javohir.0524">
     <img src="https://img.shields.io/badge/instagram-red?logo=instagram&logoColor=white" alt="Bu instagram badges">
-  </a>
-  <a href="https://facebook.com/Javohir Yuldashev">
-    <img src="https://img.shields.io/badge/facebook-white?logo=facebook&logoColor=blue" alt="Bu facebook badges">
   </a>
   <br>
   <img src="https://komarev.com/ghpvc/?username=freedom-1&label=PROFILNI+KO'RISHLAR+SONI" alt="400"/>
