@@ -7,7 +7,7 @@
 </div>
 <hr>
 <div id="badges" align="center">
-  <a href="https://t.me/javohir24_05_2005">
+  <a href="https://t.me/javohir24052005">
     <img src="https://img.shields.io/badge/telegram-blue?logo=telegram&logoColor=white" alt="Bu telegram badges">
   </a>
   <a href="https://youtube.com/@javohiryoldashev2405">
