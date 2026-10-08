@@ -45,8 +45,10 @@ def bullets(slide, items, size=24):
         r0 = p.add_run(); r0.text = "■  "; r0.font.size = Pt(size - 8); r0.font.color.rgb = ACCENT; r0.font.name = FONT
         r = p.add_run(); r.text = t; r.font.size = Pt(size); r.font.color.rgb = INK; r.font.name = FONT
 
-def build(topic, out):
-    prs = Presentation(); prs.slide_width, prs.slide_height = W, H
+def build(topic, out, prs=None):
+    own = prs is None
+    if own:
+        prs = Presentation(); prs.slide_width, prs.slide_height = W, H
     slides = plan_slides(topic)
     tur = "Nazariy mashg‘ulot" if topic["tur"] == "N" else "Amaliy mashg‘ulot"
     for n, sd in enumerate(slides, 1):
@@ -83,8 +85,9 @@ def build(topic, out):
             s = base(prs, "Xulosa va nazorat savollari", n)
             qs = [x for _, x in topic["questions"]][:5]
             bullets(s, qs, 22)
-    prs.save(out)
-    return [sd for sd in slides]
+    if own:
+        prs.save(out)
+    return slides
 
 if __name__ == "__main__":
     outdir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "slaydlar")
@@ -93,3 +96,9 @@ if __name__ == "__main__":
         fn = os.path.join(outdir, f"{t['no']:02d}-mavzu_slaydlar.pptx")
         build(t, fn)
         print("ok", fn)
+
+    prs = Presentation(); prs.slide_width, prs.slide_height = W, H
+    for t in load():
+        build(t, None, prs)
+    out = os.path.join(os.path.dirname(outdir), "Malumotlar_tuzilmasi_va_algoritmlar_Slaydlar_20_mavzu.pptx")
+    prs.save(out); print(len(prs.slides), out)
