@@ -404,14 +404,21 @@ def mavzu_matnlari(D, markers):
         for _, q in t["questions"]:
             D.bullet(q)
 
+SLIDE_DIR = "/tmp/claude-0/-home-user-javohir2405/ae8cccd8-7417-56ec-96d8-2472d0742e4b/scratchpad/slides"
+
 def slaydlar(D):
     D.heading("VIZUAL-DIDAKTIK RESURSLAR (SLAYDLAR)", 1, page_break=True)
-    D.para("Har bir mavzu uchun mavzu matnidan olingan 10 varaqli taqdimot (slayd) tayyorlangan. Taqdimotlar alohida PowerPoint (.pptx) fayllarda “slaydlar” papkasida saqlanadi. Har bir taqdimot tarkibi: 1 – titul; 2 – mavzu rejasi; 3–9 – reja savollari bo‘yicha mazmun va dasturlash namunalari; 10 – xulosa va nazorat savollari.", 14)
-    rows = [["Mavzu", "Fayl nomi", "Slaydlar sarlavhalari"]]
+    D.para("Har bir mavzu uchun mavzu matnidan olingan 10 varaqli taqdimot (slayd) tayyorlangan. Slaydlar quyida mavzular bo‘yicha keltirilgan; ularning PowerPoint (.pptx) variantlari ham alohida fayllarda mavjud. Har bir taqdimot tarkibi: 1 – titul; 2 – mavzu rejasi; 3–9 – reja savollari bo‘yicha mazmun va dasturlash namunalari; 10 – xulosa va nazorat savollari.", 14)
     for t in TOPICS:
-        ts = slide_titles(t)
-        rows.append([f"{t['no']}-mavzu", f"{t['no']:02d}-mavzu_slaydlar.pptx", [f"{i}. {s}" for i, s in enumerate(ts, 1)]])
-    D.table(rows, [2.0, 4.3, 10.2], size=10.5, align_center_cols=(0,))
+        D.heading(f"{t['no']}-mavzu slaydlari: {t['title']}", 2, page_break=True)
+        tb = D.d.add_table(rows=5, cols=2); tb.alignment = WD_TABLE_ALIGNMENT.CENTER
+        for i in range(10):
+            c = tb.rows[i // 2].cells[i % 2]
+            pr = c.paragraphs[0]; pr.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            pr.paragraph_format.space_after = Pt(4); pr.paragraph_format.space_before = Pt(4)
+            pr.add_run().add_picture(os.path.join(SLIDE_DIR, f"s{t['no']:02d}-{i+1:02d}.jpg"), width=Cm(7.9))
+        for row in tb.rows:
+            trPr = row._tr.get_or_add_trPr(); cs = OxmlElement("w:cantSplit"); cs.set(qn("w:val"), "true"); trPr.append(cs)
 
 TEST = [
     ("Algoritmning chekliligi xossasi nimani anglatadi?", ["A) Algoritm chekli sondagi qadamdan so‘ng to‘xtashi kerak", "B) Algoritm faqat chekli son bilan ishlaydi", "C) Algoritm cheklangan xotira talab qiladi", "D) Algoritm bitta natija beradi"], "A"),
